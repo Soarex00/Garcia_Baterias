@@ -1,82 +1,64 @@
-import {
-  Button,
-  MegaMenu,
-  MegaMenuDropdown,
-  NavbarBrand,
-  NavbarCollapse,
-  NavbarLink,
-  NavbarToggle,
-} from "flowbite-react";
+import { ShoppingCart, Zap } from "lucide-react";
 
 export default function Header() {
   return (
-    <MegaMenu>
-      <NavbarBrand href="/">
-        <img alt="" src="/favicon.svg" className="mr-3 h-6 sm:h-9" />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Voltz
-        </span>
-      </NavbarBrand>
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 shadow-sm">
+      <div className="container mx-auto px-4">
+        <div className="flex h-16 items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center gap-2 cursor-pointer">
+            <Zap className="h-6 w-6 text-blue-600 fill-blue-600" />
+            <span className="text-xl font-bold text-blue-600">Voltz Store</span>
+          </div>
 
-      <div className="order-2 hidden items-center md:flex">
-        <a
-          href="#"
-          className="mr-1 rounded-lg px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-300 md:mr-2 md:px-5 md:py-2.5 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-        >
-          Entrar
-        </a>
-        <Button href="#">Cadastrar</Button>
+          {/* Navegação */}
+          <nav className="hidden md:flex items-center gap-6">
+            <a
+              href="#"
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Início
+            </a>
+            <a
+              href="#"
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Produto
+            </a>
+            <a
+              href="#"
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Sobre
+            </a>
+            <a
+              href="#"
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Contato
+            </a>
+          </nav>
+
+          {/* Ações */}
+          <div className="hidden md:flex items-center gap-4">
+            <button className="relative p-2 hover:bg-gray-100 rounded-full transition"></button>
+
+            <div className="flex gap-3">
+              <input
+                type="button"
+                value="Entrar"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer"
+              />
+              <input
+                type="button"
+                value="Cadastrar"
+                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold py-2 px-5 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer"
+              />
+            </div>
+            <ShoppingCart className="h-6 w-6 text-gray-700 hover:text-blue-600" />
+          </div>
+        </div>
       </div>
-
-      <NavbarToggle />
-
-      <NavbarCollapse>
-        <NavbarLink>
-          <MegaMenuDropdown toggle={<>Categorias</>}>
-            <ul className="grid">
-              <div className="space-y-4 p-4">
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-primary-600 dark:hover:text-primary-500"
-                  >
-                    Baterias de Carro
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-primary-600 dark:hover:text-primary-500"
-                  >
-                    Baterias de Moto
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-primary-600 dark:hover:text-primary-500"
-                  >
-                    Baterias de caminhão
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-primary-600 dark:hover:text-primary-500"
-                  >
-                    Baterias Estacionária
-                  </a>
-                </li>
-              </div>
-
-              <div className="space-y-4 p-4"></div>
-            </ul>
-          </MegaMenuDropdown>
-        </NavbarLink>
-
-        <NavbarLink href="#">Sobre Nós</NavbarLink>
-        <NavbarLink href="#">Contato</NavbarLink>
-      </NavbarCollapse>
-    </MegaMenu>
+    </header>
   );
 }

@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "image": "./bateria moura.webp",
+      "model": "M60GD",
+      "name": "Bateria Moura 60ah",
+      "rating": 4,
+      "reviews": 189,
+      "price": 459.0,
+      "vehicles": ["Onix", "Onix Plus", "Prisma", "Celta", "Montana", "Cruze"]
+    },
+    {
+      "id": 2,
+      "image": "./bateria starke.webp",
+      "model": "S60FD",
+      "name": "Bateria Starke 60ah",
+      "rating": 4,
+      "reviews": 128,
+      "price": 280.0,
+      "vehicles": ["Gol", "Voyage", "Saveiro", "Fox", "Polo"]
+    },
+    {
+      "id": 3,
+      "image": "./Bateria Zetta.webp",
+      "model": "Z60D",
+      "name": "Bateria Zetta 60ah",
+      "rating": 5,
+      "reviews": 86,
+      "price": 360.0,
+      "vehicles": ["HB20", "HB20S", "Kia Picanto", "Renault Sandero"]
+    }
+  ]
+}
