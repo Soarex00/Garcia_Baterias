@@ -9,7 +9,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
 
-        {/* Telas de autenticação */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
       </Routes>
