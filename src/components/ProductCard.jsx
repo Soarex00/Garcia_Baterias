@@ -2,12 +2,9 @@ import { ShoppingCart } from "lucide-react";
 import { useEffect, useState } from "react";
 import { api } from "../services/api";
 import { addToCart } from "../utils/addToCart";
-// import { useForm } from "react-hook-form";
 
 export default function ProductCard() {
-  const [products, setProducts] = useState([])
-  // const [favoritos, setFavoritos] = useState([])
-  // const { register, handleSubmit, reset } = useForm()
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     async function loadProducts() {
@@ -22,10 +19,10 @@ export default function ProductCard() {
     loadProducts();
   }, []);
 
-
   return (
     <section id="product" className="py-20 bg-white">
       <div className="container mx-auto px-6">
+        {/* Título */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#002D72] mb-4">
             Nossas Baterias
@@ -35,27 +32,20 @@ export default function ProductCard() {
           </p>
         </div>
 
-        {/* Grid */}
+        {/* Grid de produtos */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {products.map((product) => (
             <div
               key={product.id}
-              className="border border-[#002D72] rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300 bg-white"
+              className="border border-[#002D72] rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300 bg-white flex flex-col"
             >
               <img
                 src={product.image}
                 alt={product.name}
                 className="w-full h-40 object-contain p-4"
               />
-              
-              <h3>{product.name} &nbsp;
-              {/* {favoritos.includes(filme.id) ? 
-            <FaHeart onClick={desfavoritaFilme} className='btn-favorito destaque' /> :
-            <FaRegHeart onClick={favoritaFilme} className='btn-favorito' />
-          } */}
-        </h3>
 
-              <div className="px-5 pb-6 text-center">
+              <div className="px-5 pb-6 text-center flex flex-col flex-1">
                 <p className="text-gray-500 text-sm mb-1">
                   Modelo <span className="font-medium">{product.model}</span>
                 </p>
@@ -64,7 +54,7 @@ export default function ProductCard() {
                   {product.name}
                 </h3>
 
-                <p className="text-gray-500 text-sm mb-1">A partir de</p>
+                <p className="text-gray-500 text-sm">A partir de</p>
                 <p className="text-2xl font-bold text-[#002D72] mb-4">
                   R$
                   {product.price.toLocaleString("pt-BR", {
@@ -74,7 +64,7 @@ export default function ProductCard() {
 
                 <button
                   onClick={() => addToCart(product)}
-                  className="w-full flex items-center justify-center gap-2 bg-[#002D72] text-white font-semibold py-2.5 rounded-lg hover:bg-[#003B99] transition-all duration-200"
+                  className="w-full flex items-center justify-center gap-2 bg-[#002D72] text-white font-semibold py-2.5 rounded-lg hover:bg-[#003B99] transition-all"
                 >
                   <ShoppingCart className="h-5 w-5" />
                   Adicionar ao Carrinho

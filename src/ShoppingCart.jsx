@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Trash2 } from "lucide-react";
-import { ShoppingCart as CartIcon } from "lucide-react";
+import { ArrowLeft, Trash2, ShoppingCart as CartIcon } from "lucide-react";
+
 export default function ShoppingCart() {
   const [cart, setCart] = useState([]);
 
@@ -16,14 +16,18 @@ export default function ShoppingCart() {
     localStorage.setItem("cart", JSON.stringify(updated));
   }
 
-  const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const total = cart.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
 
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-6">
       <div className="max-w-4xl mx-auto">
+        
         {/* Título */}
         <div className="flex items-center gap-3 mb-8">
-          <ShoppingCart className="w-8 h-8 text-[#002D72]" />
+          <CartIcon className="w-8 h-8 text-[#002D72]" />
           <h1 className="text-3xl font-bold text-[#002D72]">Seu Carrinho</h1>
         </div>
 
@@ -62,9 +66,11 @@ export default function ShoppingCart() {
                   <h2 className="text-lg font-semibold text-[#002D72]">
                     {item.name}
                   </h2>
+
                   <p className="text-gray-600 text-sm">
                     Quantidade: {item.quantity}
                   </p>
+
                   <p className="text-[#003B99] font-bold text-lg">
                     R$
                     {item.price.toLocaleString("pt-BR", {

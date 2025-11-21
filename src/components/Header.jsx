@@ -59,7 +59,7 @@ export default function Header() {
                 Cadastrar
               </Link>
             </div>
-            <Link to="/shoppingCart">
+            <Link to="/carrinho">
               <ShoppingCart className="h-6 w-6 text-gray-700 hover:text-blue-600" />
             </Link>
           </div>
