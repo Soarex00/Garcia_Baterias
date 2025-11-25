@@ -6,11 +6,11 @@ import { getCartItems } from "./utils/addToCart";
 export default function ShoppingCart() {
   const [cart, setCart] = useState([]);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
-    const user = localStorage.getItem('user');
+    const user = localStorage.getItem("user");
     if (!user) {
-      navigate('/login');
+      navigate("/login");
       return;
     }
     const cartItems = getCartItems();
@@ -23,28 +23,25 @@ export default function ShoppingCart() {
     localStorage.setItem("cart", JSON.stringify(updated));
   }
 
+  // eslint-disable-next-line no-unused-vars
   function updateQuantity(id, newQuantity) {
     if (newQuantity < 1) {
       removeItem(id);
       return;
     }
-    
-    const updated = cart.map((item) => 
+
+    const updated = cart.map((item) =>
       item.id === id ? { ...item, quantity: newQuantity } : item
     );
     setCart(updated);
     localStorage.setItem("cart", JSON.stringify(updated));
   }
 
-  const total = cart.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
+  const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-6">
       <div className="max-w-4xl mx-auto">
-        
         {/* Título */}
         <div className="flex items-center gap-3 mb-8">
           <CartIcon className="w-8 h-8 text-[#002D72]" />

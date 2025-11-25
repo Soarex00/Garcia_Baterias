@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import Checkout from "./pages/Checkout";
 import LoginPage from "../src/Login";
 import AddBateria from "./pages/AddBateria";
 import RegisterPage from "../src/Register";
@@ -19,6 +20,7 @@ export default function App() {
 
         <Route path="/carrinho" element={<ShoppingCart />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </BrowserRouter>
   );

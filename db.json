@@ -8,14 +8,7 @@
       "rating": 4,
       "reviews": 189,
       "price": 459,
-      "vehicles": [
-        "Onix",
-        "Onix Plus",
-        "Prisma",
-        "Celta",
-        "Montana",
-        "Cruze"
-      ],
+      "vehicles": ["Onix", "Onix Plus", "Prisma", "Celta", "Montana", "Cruze"],
       "userReviews": [
         {
           "name": "Ricardo",
@@ -33,13 +26,7 @@
       "rating": 4,
       "reviews": 128,
       "price": 280,
-      "vehicles": [
-        "Gol",
-        "Voyage",
-        "Saveiro",
-        "Fox",
-        "Polo"
-      ],
+      "vehicles": ["Gol", "Voyage", "Saveiro", "Fox", "Polo"],
       "userReviews": [
         {
           "name": "Arthur",
@@ -60,22 +47,18 @@
       "image": "./Bateria Zetta.webp",
       "model": "Z60D",
       "name": "Bateria Zetta 60ah",
-      "rating": 5,
+      "rating": 0,
       "reviews": 86,
       "price": 360,
-      "vehicles": [
-        "HB20",
-        "HB20S",
-        "Kia Picanto",
-        "Renault Sandero"
-      ]
+      "vehicles": ["HB20", "HB20S", "Kia Picanto", "Renault Sandero"],
+      "userReviews": []
     },
     {
-      "id": 4,
+      "id": "4",
       "image": "Bateria Acdelco.webp",
       "model": "ADR60HD",
       "name": "Bateria ACDelco 60ah",
-      "rating": 5,
+      "rating": 0,
       "reviews": 86,
       "price": 465,
       "vehicles": [
@@ -91,11 +74,11 @@
       "userReviews": []
     },
     {
-      "id": 5,
+      "id": "5",
       "image": "./bateria heliar.webp",
       "model": "HNP60HD",
       "name": "Bateria Heliar 60ah",
-      "rating": 5,
+      "rating": 0,
       "reviews": 86,
       "price": 595,
       "vehicles": [
@@ -127,7 +110,7 @@
       ],
       "userReviews": []
     },
-        {
+    {
       "id": "9886",
       "image": "https://http2.mlstatic.com/D_NQ_NP_2X_890693-MLB73262588759_122023-F.webp",
       "model": "M135BD",
@@ -139,6 +122,58 @@
         "1515",
         "Constellation Titan",
         "19-320"
+      ],
+      "userReviews": []
+    },
+    {
+      "id": "a3f5",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_2X_915469-MLB86208350878_062025-F.webp",
+      "model": "60PVD",
+      "name": "Bateria Tudor 60ah",
+      "rating": 0,
+      "reviews": 156,
+      "price": 589,
+      "vehicles": ["A3", "ARGO", "BRAVO", "AGILE", "SPIN", "HRV"],
+      "userReviews": []
+    },
+    {
+      "id": "b7c2",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_2X_726864-MLB51827761879_102022-F.webp",
+      "model": "M50JD",
+      "name": "Bateria Moura 50ah",
+      "rating": 0,
+      "reviews": 234,
+      "price": 614,
+      "vehicles": ["Uno", "Palio", "Siena", "Strada", "Fiorino", "Doblo"],
+      "userReviews": []
+    },
+    {
+      "id": "c8d9",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_2X_735201-MLB87708350812_072025-F.webp",
+      "model": "HG70PD",
+      "name": "Bateria Heliar 70ah",
+      "rating": 0,
+      "reviews": 198,
+      "price": 819,
+      "vehicles": ["Corolla", "Civic", "Jetta", "Passat", "Fusion", "Accord"],
+      "userReviews": []
+    },
+    {
+      "id": "d4e8",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_2X_715958-MLB74590003027_022024-F.webp",
+      "model": "M80RD",
+      "name": "Bateria Moura 80ah",
+      "rating": 0,
+      "reviews": 167,
+      "price": 839,
+      "vehicles": [
+        "Tucson",
+        "Santa Fe",
+        "Sorento",
+        "Sportage",
+        "IX 35",
+        "Azera",
+        "CR-V"
       ],
       "userReviews": []
     }

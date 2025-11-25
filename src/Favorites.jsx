@@ -24,6 +24,7 @@ export default function Favorites() {
     loadFavorites(); // Recarrega a lista
   };
 
+  // eslint-disable-next-line no-unused-vars
   const handleAddToCart = (product) => {
     addToCart(product);
   };
@@ -47,7 +48,8 @@ export default function Favorites() {
               Meus Favoritos
             </h1>
             <p className="text-gray-600">
-              {favorites.length} {favorites.length === 1 ? "produto" : "produtos"} salvos
+              {favorites.length}{" "}
+              {favorites.length === 1 ? "produto" : "produtos"} salvos
             </p>
           </div>
 
@@ -91,7 +93,8 @@ export default function Favorites() {
 
                   <div className="px-5 pb-6 text-center flex flex-col flex-1">
                     <p className="text-gray-500 text-sm mb-1">
-                      Modelo <span className="font-medium">{product.model}</span>
+                      Modelo{" "}
+                      <span className="font-medium">{product.model}</span>
                     </p>
 
                     <h3 className="text-lg font-bold text-[#002D72] mb-2">
@@ -111,15 +114,14 @@ export default function Favorites() {
                         addToCart(product);
                         Swal.fire({
                           toast: true,
-                          position: 'bottom-end',
-                          icon: 'success',
-                          title: 'Produto adicionado ao carrinho',
+                          position: "bottom-end",
+                          icon: "success",
+                          title: "Produto adicionado ao carrinho",
                           showConfirmButton: false,
                           timer: 2800,
-                          timerProgressBar: true
+                          timerProgressBar: true,
                         });
                       }}
-
                       className="w-full flex items-center justify-center gap-2 bg-[#002D72] text-white font-semibold py-2.5 rounded-lg hover:bg-[#003B99] transition-all mt-auto"
                     >
                       <ShoppingCart className="h-5 w-5" />

@@ -8,7 +8,9 @@ export default function BatteryFilter() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
-  { /* Buscar produtos da API quando o componente carregar */ }
+  {
+    /* Buscar produtos da API quando o componente carregar */
+  }
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -21,14 +23,18 @@ export default function BatteryFilter() {
     fetchProducts();
   }, []);
 
-  {/* Filtrar produtos em tempo real por veículo (pelas iniciais) */ }
+  {
+    /* Filtrar produtos em tempo real por veículo (pelas iniciais) */
+  }
   useEffect(() => {
     if (!searchTerm.trim()) {
       setFilteredProducts([]);
       return;
     }
 
-    { /* Filtrar produtos em tempo real por veículo (pelas iniciais) */ }
+    {
+      /* Filtrar produtos em tempo real por veículo (pelas iniciais) */
+    }
     const searchLower = searchTerm.toLowerCase();
     const results = products.filter((product) =>
       product.vehicles.some((vehicle) =>
@@ -36,7 +42,9 @@ export default function BatteryFilter() {
       )
     );
 
-    { /* Atualizar produtos filtrados */ }
+    {
+      /* Atualizar produtos filtrados */
+    }
     setFilteredProducts(results);
   }, [searchTerm, products]);
 
@@ -78,26 +86,25 @@ export default function BatteryFilter() {
               Buscar
             </button>
           </div>
-          </div>
-          </section>
-          
+        </div>
+      </section>
 
-          {/* Resultados da busca */}
-          {filteredProducts.length > 0 && (
-            <div className="mt-8">
-              <h3 className="text-xl font-semibold text-[#002D72] text-center mb-6">
-                Baterias recomendadas para "{searchTerm}"
-              </h3>
-                <ProductCardFilter products={filteredProducts} />
-            </div>
-          )}
+      {/* Resultados da busca */}
+      {filteredProducts.length > 0 && (
+        <div className="mt-8">
+          <h3 className="text-xl font-semibold text-[#002D72] text-center mb-6">
+            Baterias recomendadas para "{searchTerm}"
+          </h3>
+          <ProductCardFilter products={filteredProducts} />
+        </div>
+      )}
 
-          {searchTerm && filteredProducts.length === 0 && (
-            <div className="mt-8 text-center text-gray-500">
-              <p>Nenhuma bateria encontrada para "{searchTerm}"</p>
-              <p className="text-sm mt-2">Tente outro modelo de veículo</p>
-            </div>
-          )}
+      {searchTerm && filteredProducts.length === 0 && (
+        <div className="mt-8 text-center text-gray-500">
+          <p>Nenhuma bateria encontrada para "{searchTerm}"</p>
+          <p className="text-sm mt-2">Tente outro modelo de veículo</p>
+        </div>
+      )}
     </>
   );
 }

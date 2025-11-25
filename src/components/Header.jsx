@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getFavorites } from "../utils/addToFavorites";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function getCartItems() {
   return JSON.parse(localStorage.getItem("cart")) || [];
 }
@@ -15,10 +16,12 @@ export default function Header() {
   const [user, setUser] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
 
-  {/* Verificar se é admin*/ }
+  {
+    /* Verificar se é admin*/
+  }
   useEffect(() => {
     const checkAdmin = () => {
-      const userData = localStorage.getItem('user');
+      const userData = localStorage.getItem("user");
       if (userData) {
         const user = JSON.parse(userData);
         if (user.isAdmin === true) {
@@ -34,10 +37,12 @@ export default function Header() {
     checkAdmin();
   }, []);
 
-  {/* Verificar se está logado */ }
+  {
+    /* Verificar se está logado */
+  }
   useEffect(() => {
     const checkLogin = () => {
-      const userData = localStorage.getItem('user');
+      const userData = localStorage.getItem("user");
       if (userData) {
         setIsLoggedIn(true);
         setUser(JSON.parse(userData));
@@ -49,19 +54,32 @@ export default function Header() {
 
     checkLogin();
 
-    {/* Atualizar quando localStorage mudar (mesmo em outra aba) */ }
-    window.addEventListener('storage', checkLogin);
+    {
+      /* Atualizar quando localStorage mudar (mesmo em outra aba) */
+    }
+    window.addEventListener("storage", checkLogin);
 
     return () => {
-      window.removeEventListener('storage', checkLogin);
+      window.removeEventListener("storage", checkLogin);
     };
   }, []);
 
-  {/* Contador de itens carrinho */ }
+  {
+    /* Contador de itens carrinho */
+  }
   useEffect(() => {
     const updateCartCount = () => {
+      const userData = localStorage.getItem("user");
+      if (!userData) {
+        setCartCount(0);
+        return;
+      }
+
       const cartItems = getCartItems();
-      const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+      const totalQuantity = cartItems.reduce(
+        (total, item) => total + item.quantity,
+        0
+      );
       setCartCount(totalQuantity);
     };
 
@@ -70,7 +88,9 @@ export default function Header() {
     return () => clearInterval(interval);
   }, []);
 
-  {/* Contador de favoritos */ }
+  {
+    /* Contador de favoritos */
+  }
   useEffect(() => {
     const updateFavoritesCount = () => {
       const favorites = getFavorites();
@@ -83,10 +103,11 @@ export default function Header() {
     return () => clearInterval(interval);
   }, []);
 
-
-  {/* Função de logout */ }
+  {
+    /* Função de logout */
+  }
   const handleLogout = () => {
-    localStorage.removeItem('user');
+    localStorage.removeItem("user");
     setIsLoggedIn(false);
     setUser(null);
     window.location.reload();
@@ -98,12 +119,14 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           <Link
             to="/"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors"
           >
             <div className="flex items-center gap-2 cursor-pointer">
               <Zap className="h-6 w-6 text-blue-600 fill-blue-600" />
-              <span className="text-xl font-bold text-blue-600">Voltz Store</span>
+              <span className="text-xl font-bold text-blue-600">
+                Voltz Store
+              </span>
             </div>
           </Link>
 
@@ -300,6 +323,5 @@ export default function Header() {
         )}
       </div>
     </header>
-
   );
 }

@@ -15,45 +15,51 @@ export default function Register() {
     cidade: "",
     estado: "",
     senha: "",
-    confirmarSenha: ""
+    confirmarSenha: "",
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    {/* Validar se as senhas coincidem */ }
+    {
+      /* Validar se as senhas coincidem */
+    }
     if (formData.senha !== formData.confirmarSenha) {
       Swal.fire({
-        icon: 'error',
-        title: 'Erro!',
-        text: 'As senhas não coincidem',
-        confirmButtonColor: '#2563eb'
+        icon: "error",
+        title: "Erro!",
+        text: "As senhas não coincidem",
+        confirmButtonColor: "#2563eb",
       });
       return;
     }
 
     try {
-      {/* Verificar se o email já existe */ }
+      {
+        /* Verificar se o email já existe */
+      }
       const checkEmail = await api.get(`/users?email=${formData.email}`);
 
       if (checkEmail.data.length > 0) {
         Swal.fire({
-          icon: 'warning',
-          title: 'Email já cadastrado',
-          text: 'Este email já está em uso',
-          confirmButtonColor: '#2563eb'
+          icon: "warning",
+          title: "Email já cadastrado",
+          text: "Este email já está em uso",
+          confirmButtonColor: "#2563eb",
         });
         return;
       }
 
-      {/* Criar objeto do novo usuário */ }
+      {
+        /* Criar objeto do novo usuário */
+      }
       const newUser = {
         nome: formData.nome,
         email: formData.email,
@@ -63,13 +69,17 @@ export default function Register() {
         cidade: formData.cidade,
         estado: formData.estado,
         senha: formData.senha,
-        DataCriacao: new Date().toISOString()
+        DataCriacao: new Date().toISOString(),
       };
 
-      {/* Salvar no db.json */ }
+      {
+        /* Salvar no db.json */
+      }
       await api.post("/users", newUser);
 
-      {/* Sucesso */ }
+      {
+        /* Sucesso */
+      }
       await Swal.fire({
         html: `
     <div style="text-align: center;">
@@ -81,24 +91,24 @@ export default function Register() {
     </div>
   `,
         showConfirmButton: true,
-        confirmButtonColor: '#2563eb',
-        confirmButtonText: 'OK'
+        confirmButtonColor: "#2563eb",
+        confirmButtonText: "OK",
       });
 
-      {/* Redirecionar para login */ }
+      {
+        /* Redirecionar para login */
+      }
       navigate("/login");
-
     } catch (error) {
       console.error("Erro ao cadastrar:", error);
       Swal.fire({
-        icon: '<error>',
-        title: 'Erro ao cadastrar',
-        text: 'Tente novamente mais tarde',
-        confirmButtonColor: '#2563eb'
+        icon: "<error>",
+        title: "Erro ao cadastrar",
+        text: "Tente novamente mais tarde",
+        confirmButtonColor: "#2563eb",
       });
     }
   };
-
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-8 px-4">
@@ -297,7 +307,10 @@ export default function Register() {
 
         <p className="text-center mt-5 text-sm text-gray-600">
           Já tem conta?{" "}
-          <Link to="/login" className="text-blue-600 font-medium hover:underline">
+          <Link
+            to="/login"
+            className="text-blue-600 font-medium hover:underline"
+          >
             Entrar
           </Link>
         </p>

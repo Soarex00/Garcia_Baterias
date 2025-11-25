@@ -9,13 +9,13 @@ export default function Login() {
 
   const [formData, setFormData] = useState({
     email: "",
-    senha: ""
+    senha: "",
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -23,36 +23,44 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      {/* Buscar usuário por email */}
+      {
+        /* Buscar usuário por email */
+      }
       const response = await api.get(`/users?email=${formData.email}`);
 
       if (response.data.length === 0) {
         Swal.fire({
-          icon: 'error',
-          title: 'Usuário não encontrado',
-          text: 'Email não cadastrado',
-          confirmButtonColor: '#2563eb'
+          icon: "error",
+          title: "Usuário não encontrado",
+          text: "Email não cadastrado",
+          confirmButtonColor: "#2563eb",
         });
         return;
       }
 
       const user = response.data[0];
 
-      {/* Verificar senha */}
+      {
+        /* Verificar senha */
+      }
       if (user.senha !== formData.senha) {
         Swal.fire({
-          icon: 'error',
-          title: 'Senha incorreta',
-          text: 'Tente novamente',
-          confirmButtonColor: '#2563eb'
+          icon: "error",
+          title: "Senha incorreta",
+          text: "Tente novamente",
+          confirmButtonColor: "#2563eb",
         });
         return;
       }
 
-      {/* Salvar usuário no localStorage */}
-      localStorage.setItem('user', JSON.stringify(user));
+      {
+        /* Salvar usuário no localStorage */
+      }
+      localStorage.setItem("user", JSON.stringify(user));
 
-      {/* Sucesso */}
+      {
+        /* Sucesso */
+      }
       await Swal.fire({
         html: `
     <div style="text-align: center;">
@@ -64,20 +72,21 @@ export default function Login() {
     </div>
   `,
         showConfirmButton: true,
-        confirmButtonColor: '#2563eb',
-        confirmButtonText: 'OK'
+        confirmButtonColor: "#2563eb",
+        confirmButtonText: "OK",
       });
 
-      {/* Redirecionar para home */}
+      {
+        /* Redirecionar para home */
+      }
       navigate("/");
-
     } catch (error) {
       console.error("Erro ao fazer login:", error);
       Swal.fire({
-        icon: 'error',
-        title: 'Erro',
-        text: 'Tente novamente mais tarde',
-        confirmButtonColor: '#2563eb'
+        icon: "error",
+        title: "Erro",
+        text: "Tente novamente mais tarde",
+        confirmButtonColor: "#2563eb",
       });
     }
   };
