@@ -15,3 +15,4 @@ export function addToCart(product) {
 export function getCartItems() {
   return JSON.parse(localStorage.getItem("cart")) || [];
 }
+

@@ -22,3 +22,4 @@ export function isFavorite(productId) {
 export function getFavorites() {
   return JSON.parse(localStorage.getItem("favorites")) || [];
 }
+
