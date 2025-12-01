@@ -1,7 +1,6 @@
 import { ShoppingCart, Zap, Heart, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { getFavorites } from "../utils/addToFavorites";
+import { useState } from "react";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export function getCartItems() {
@@ -9,109 +8,7 @@ export function getCartItems() {
 }
 
 export default function Header() {
-  const [favoritesCount, setFavoritesCount] = useState(0);
-  const [cartCount, setCartCount] = useState(0);
   const [menuAberto, setMenuAberto] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState(null);
-  const [isAdmin, setIsAdmin] = useState(false);
-
-  {
-    /* Verificar se é admin*/
-  }
-  useEffect(() => {
-    const checkAdmin = () => {
-      const userData = localStorage.getItem("user");
-      if (userData) {
-        const user = JSON.parse(userData);
-        if (user.isAdmin === true) {
-          setIsAdmin(true);
-        } else {
-          setIsAdmin(false);
-        }
-      } else {
-        setIsAdmin(false);
-      }
-    };
-
-    checkAdmin();
-  }, []);
-
-  {
-    /* Verificar se está logado */
-  }
-  useEffect(() => {
-    const checkLogin = () => {
-      const userData = localStorage.getItem("user");
-      if (userData) {
-        setIsLoggedIn(true);
-        setUser(JSON.parse(userData));
-      } else {
-        setIsLoggedIn(false);
-        setUser(null);
-      }
-    };
-
-    checkLogin();
-
-    {
-      /* Atualizar quando localStorage mudar (mesmo em outra aba) */
-    }
-    window.addEventListener("storage", checkLogin);
-
-    return () => {
-      window.removeEventListener("storage", checkLogin);
-    };
-  }, []);
-
-  {
-    /* Contador de itens carrinho */
-  }
-  useEffect(() => {
-    const updateCartCount = () => {
-      const userData = localStorage.getItem("user");
-      if (!userData) {
-        setCartCount(0);
-        return;
-      }
-
-      const cartItems = getCartItems();
-      const totalQuantity = cartItems.reduce(
-        (total, item) => total + item.quantity,
-        0
-      );
-      setCartCount(totalQuantity);
-    };
-
-    updateCartCount();
-    const interval = setInterval(updateCartCount, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  {
-    /* Contador de favoritos */
-  }
-  useEffect(() => {
-    const updateFavoritesCount = () => {
-      const favorites = getFavorites();
-      setFavoritesCount(favorites.length);
-    };
-
-    updateFavoritesCount();
-    const interval = setInterval(updateFavoritesCount, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  {
-    /* Função de logout */
-  }
-  const handleLogout = () => {
-    localStorage.removeItem("user");
-    setIsLoggedIn(false);
-    setUser(null);
-    window.location.reload();
-  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-backdrop-filter:bg-white/80 shadow-sm">
@@ -120,13 +17,10 @@ export default function Header() {
           <Link
             to="/"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+         
           >
             <div className="flex items-center gap-2 cursor-pointer">
-              <Zap className="h-6 w-6 text-blue-600 fill-blue-600" />
-              <span className="text-xl font-bold text-blue-600">
-                Voltz Store
-              </span>
+              <img className="h-20 w-auto" src="./public/logo3.png" alt="Logo" />
             </div>
           </Link>
 
@@ -158,76 +52,30 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Link
-              to="/favorites"
-              className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
+            {/* BOTÃO WHATSAPP DESKTOP */}
+            <a
+              href="https://wa.me/5553999023805?text=Ol%C3%A1!%20Tenho%20interesse%20em%20uma%20bateria,%20pode%20me%20ajudar?"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-600 transition-colors"
             >
-              <Heart className="h-5 w-5 text-gray-700" />
-              {favoritesCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">
-                  {favoritesCount}
-                </span>
-              )}
-            </Link>
-
-            <Link
-              to="/carrinho"
-              className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
-            >
-              <ShoppingCart className="h-5 w-5 text-gray-700" />
-              {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">
-                  {cartCount}
-                </span>
-              )}
-            </Link>
-
-            <div className="hidden md:flex items-center gap-3">
-              {!isLoggedIn ? (
-                <>
-                  <Link
-                    to="/login"
-                    className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg shadow-md transition-all"
-                  >
-                    Entrar
-                  </Link>
-                  <Link
-                    to="/register"
-                    className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold py-2 px-5 rounded-lg transition-all"
-                  >
-                    Cadastrar
-                  </Link>
-                </>
-              ) : (
-                <>
-                  <span className="text-gray-700 font-medium">
-                    Olá, {user?.nome}
-                  </span>
-                  <button
-                    onClick={handleLogout}
-                    className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-5 rounded-lg shadow-md transition-all"
-                  >
-                    Sair
-                  </button>
-
-                  {isAdmin && (
-                    <>
-                      <Link
-                        to="/add-bateria"
-                        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg shadow-md transition-all"
-                      >
-                        Adicionar Produto
-                      </Link>
-                    </>
-                  )}
-                </>
-              )}
-            </div>
+              {/* ÍCONE OFICIAL DO WHATSAPP */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 32 32"
+                fill="white"
+              >
+                <path d="M16.001 3.2c-7.047 0-12.8 5.616-12.8 12.549 0 2.209.607 4.366 1.76 6.266L3.2 28.8l7.007-1.828c1.835.997 3.907 1.523 5.794 1.523h.006c7.047 0 12.8-5.616 12.8-12.549s-5.754-12.746-12.806-12.746zm7.51 17.771c-.313.878-1.829 1.676-2.563 1.731-.653.05-1.49.07-2.399-.151-.553-.137-1.261-.41-2.173-.802-3.822-1.656-6.309-5.508-6.5-5.77-.191-.262-1.553-2.068-1.553-3.944 0-1.876.98-2.8 1.327-3.18.347-.38.756-.476 1.007-.476.251 0 .503.003.723.014.234.011.543-.088.85.646.313.75 1.064 2.598 1.159 2.786.095.188.158.41.03.672-.127.262-.191.41-.378.632-.188.222-.396.495-.563.664-.188.188-.383.394-.165.773.219.38.975 1.6 2.095 2.588 1.441 1.255 2.648 1.646 3.028 1.833.38.188.598.157.82-.095.222-.253.945-1.102 1.198-1.478.253-.38.503-.315.85-.188.347.126 2.197 1.036 2.574 1.225.377.19.628.283.722.441.094.157.094.908-.219 1.785z" />
+              </svg>
+              PEÇA AGORA
+            </a>
 
             {/* Botão Menu Mobile */}
             <button
               onClick={() => setMenuAberto(!menuAberto)}
-              className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              className="md:hidden p-2 rounded-lg transition-all active:bg-gray-200 hover:bg-gray-100"
             >
               {menuAberto ? (
                 <X className="h-6 w-6 text-gray-700" />
@@ -271,53 +119,25 @@ export default function Header() {
                 Contato
               </a>
 
-              {/* Botões Mobile - Condicional */}
-              <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-gray-200">
-                {!isLoggedIn ? (
-                  <>
-                    <Link
-                      to="/login"
-                      onClick={() => setMenuAberto(false)}
-                      className="bg-blue-600 hover:bg-blue-700 text-white text-center font-semibold py-2.5 px-5 rounded-lg shadow-md transition-all"
-                    >
-                      Entrar
-                    </Link>
-                    <Link
-                      to="/register"
-                      onClick={() => setMenuAberto(false)}
-                      className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white text-center font-semibold py-2.5 px-5 rounded-lg transition-all"
-                    >
-                      Cadastrar
-                    </Link>
-                  </>
-                ) : (
-                  <>
-                    <div className="text-center text-gray-700 font-medium py-2">
-                      Olá, {user?.nome}
-                    </div>
-                    <button
-                      onClick={() => {
-                        handleLogout();
-                        setMenuAberto(false);
-                      }}
-                      className="bg-red-600 hover:bg-red-700 text-white text-center font-semibold py-2.5 px-5 rounded-lg shadow-md transition-all"
-                    >
-                      Sair
-                    </button>
-
-                    {isAdmin && (
-                      <>
-                        <Link
-                          to="/add-bateria"
-                          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg shadow-md transition-all text-center"
-                        >
-                          Adicionar Produto
-                        </Link>
-                      </>
-                    )}
-                  </>
-                )}
-              </div>
+              {/* BOTÃO WHATSAPP MOBILE */}
+              <a
+                href="https://wa.me/5553999023805?text=Ol%C3%A1!%20Tenho%20interesse%20em%20uma%20bateria,%20pode%20me%20ajudar?"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 bg-green-500 text-white flex items-center justify-center gap-2 py-2 rounded-lg font-medium hover:bg-green-600 transition-colors"
+              >
+                {/* ÍCONE OFICIAL DO WHATSAPP */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 32 32"
+                  fill="white"
+                >
+                  <path d="M16.001 3.2c-7.047 0-12.8 5.616-12.8 12.549 0 2.209.607 4.366 1.76 6.266L3.2 28.8l7.007-1.828c1.835.997 3.907 1.523 5.794 1.523h.006c7.047 0 12.8-5.616 12.8-12.549s-5.754-12.746-12.806-12.746zm7.51 17.771c-.313.878-1.829 1.676-2.563 1.731-.653.05-1.49.07-2.399-.151-.553-.137-1.261-.41-2.173-.802-3.822-1.656-6.309-5.508-6.5-5.77-.191-.262-1.553-2.068-1.553-3.944 0-1.876.98-2.8 1.327-3.18.347-.38.756-.476 1.007-.476.251 0 .503.003.723.014.234.011.543-.088.85.646.313.75 1.064 2.598 1.159 2.786.095.188.158.41.03.672-.127.262-.191.41-.378.632-.188.222-.396.495-.563.664-.188.188-.383.394-.165.773.219.38.975 1.6 2.095 2.588 1.441 1.255 2.648 1.646 3.028 1.833.38.188.598.157.82-.095.222-.253.945-1.102 1.198-1.478.253-.38.503-.315.85-.188.347.126 2.197 1.036 2.574 1.225.377.19.628.283.722.441.094.157.094.908-.219 1.785z" />
+                </svg>
+                WhatsApp
+              </a>
             </nav>
           </div>
         )}
@@ -325,4 +145,3 @@ export default function Header() {
     </header>
   );
 }
-

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 export default function HeroSection() {
   const images = [
-    "bateria starke.webp",
+    "Bateria Starke.webp",
     "Bateria Zetta.webp",
     "bateria moura.webp",
   ];

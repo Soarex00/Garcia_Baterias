@@ -9,52 +9,43 @@
       "reviews": 189,
       "price": 459,
       "vehicles": [
+        "Palio",
         "Onix",
         "Onix Plus",
         "Prisma",
         "Celta",
         "Montana",
-        "Cruze"
-      ],
-      "userReviews": [
-        {
-          "name": "Ricardo",
-          "rating": 5,
-          "comment": "Moura é qualidade garantida!",
-          "date": "2025-11-22T18:27:33.254Z"
-        },
-        {
-          "name": "Heitor Barbosa Hepp",
-          "rating": 5,
-          "comment": "Excelente Bateria",
-          "date": "2025-11-26T00:34:09.976Z"
-        }
+        "Cruze",
+        "Cobalt",
+        "Spin",
+        "Tracker",
+        "Astra",
+        "Vectra",
+        "Zafira",
+        "Classic",
+        "S10 Flex",
+        "Meriva",
+        "Agile"
       ]
     },
     {
-      "id": "3",
+      "id": "2",
       "image": "./Bateria Zetta.webp",
       "model": "Z60D",
       "name": "Bateria Zetta 60ah",
       "rating": 0,
       "reviews": 86,
       "price": 360,
-      "vehicles": [
-        "HB20",
-        "HB20S",
-        "Kia Picanto",
-        "Renault Sandero"
-      ],
-      "userReviews": []
+      "vehicles": ["HB20", "HB20S", "Kia Picanto", "Renault Sandero"]
     },
     {
-      "id": "4",
-      "image": "Bateria Acdelco.webp",
-      "model": "ADR60HD",
-      "name": "Bateria ACDelco 60ah",
+      "id": "3",
+      "image": "Bateria Starke.webp",
+      "model": "S60FD",
+      "name": "Bateria Starke 60ah",
       "rating": 0,
       "reviews": 86,
-      "price": 465,
+      "price": 280,
       "vehicles": [
         "Cruze",
         "Sonic",
@@ -64,184 +55,26 @@
         "Airtrek",
         "Asx",
         "Lancer"
-      ],
-      "userReviews": []
-    },
-    {
-      "id": "5",
-      "image": "./bateria heliar.webp",
-      "model": "HNP60HD",
-      "name": "Bateria Heliar 60ah",
-      "rating": 0,
-      "reviews": 86,
-      "price": 595,
-      "vehicles": [
-        "Q3",
-        "A3",
-        "Tiggo 2",
-        "Aircross",
-        "C4 Cactus",
-        "C4 Lounge",
-        "DS4",
-        "XSARA Picasso"
-      ],
-      "userReviews": []
-    },
-    {
-      "id": "f1d2",
-      "image": "https://http2.mlstatic.com/D_NQ_NP_2X_624653-MLB92897920447_092025-F.webp",
-      "model": "MF72LD",
-      "name": "Bateria Moura 72ah",
-      "rating": 0,
-      "reviews": 0,
-      "price": 1244,
-      "vehicles": [
-        "COMPASS TRAILHAWK",
-        "RENEGADE TRAILHAWK",
-        "VITARA 4YOU AT",
-        "GOLF SPORTLINE",
-        "TIGUAN 1.4 TSI"
-      ],
-      "userReviews": []
-    },
-    {
-      "id": "9886",
-      "image": "https://http2.mlstatic.com/D_NQ_NP_2X_890693-MLB73262588759_122023-F.webp",
-      "model": "M135BD",
-      "name": "Bateria Moura 135ah",
-      "price": 1526,
-      "vehicles": [
-        "AGRALE 1800",
-        "LS-1934",
-        "1515",
-        "Constellation Titan",
-        "19-320"
-      ],
-      "userReviews": []
-    },
-    {
-      "id": "a3f5",
-      "image": "https://http2.mlstatic.com/D_NQ_NP_2X_915469-MLB86208350878_062025-F.webp",
-      "model": "60PVD",
-      "name": "Bateria Tudor 60ah",
-      "rating": 0,
-      "reviews": 156,
-      "price": 589,
-      "vehicles": [
-        "A3",
-        "ARGO",
-        "BRAVO",
-        "AGILE",
-        "SPIN",
-        "HRV"
-      ],
-      "userReviews": []
-    },
-    {
-      "id": "b7c2",
-      "image": "https://http2.mlstatic.com/D_NQ_NP_2X_726864-MLB51827761879_102022-F.webp",
-      "model": "M50JD",
-      "name": "Bateria Moura 50ah",
-      "rating": 0,
-      "reviews": 234,
-      "price": 614,
-      "vehicles": [
-        "Uno",
-        "Palio",
-        "Siena",
-        "Strada",
-        "Fiorino",
-        "Doblo"
-      ],
-      "userReviews": [
-        {
-          "name": "Heitor Barbosa Hepp",
-          "rating": 5,
-          "comment": "Bateria de ótima qualidade",
-          "date": "2025-11-25T22:33:34.595Z"
-        }
       ]
     },
     {
-      "id": "c8d9",
-      "image": "https://http2.mlstatic.com/D_NQ_NP_2X_735201-MLB87708350812_072025-F.webp",
-      "model": "HG70PD",
-      "name": "Bateria Heliar 70ah",
+      "id": "4",
+      "image": "Bateria Starke.webp",
+      "model": "S45FD",
+      "name": "Bateria Starke 45ah",
       "rating": 0,
-      "reviews": 198,
-      "price": 819,
+      "reviews": 86,
+      "price": 240,
       "vehicles": [
-        "Corolla",
-        "Civic",
-        "Jetta",
-        "Passat",
-        "Fusion",
-        "Accord"
-      ],
-      "userReviews": []
-    },
-    {
-      "id": "d4e8",
-      "image": "https://http2.mlstatic.com/D_NQ_NP_2X_715958-MLB74590003027_022024-F.webp",
-      "model": "M80RD",
-      "name": "Bateria Moura 80ah",
-      "rating": 0,
-      "reviews": 167,
-      "price": 839,
-      "vehicles": [
-        "Tucson",
-        "Santa Fe",
-        "Sorento",
-        "Sportage",
-        "IX 35",
-        "Azera",
-        "CR-V"
-      ],
-      "userReviews": []
-    },
-    {
-      "id": "82b9",
-      "image": "https://http2.mlstatic.com/D_NQ_NP_2X_622664-MLB51676922956_092022-F.webp",
-      "model": "Z75d",
-      "name": "Bateria Zetta 75ah",
-      "price": 409,
-      "vehicles": [
-        "Berlingo",
-        "Xantia",
-        "Ecosport 2.0",
-        "Clio",
-        "Megane",
-        "Parati",
-        "Logus"
-      ],
-      "userReviews": []
-    }
-  ],
-  "users": [
-    {
-      "id": "051a",
-      "nome": "Heitor Barbosa Hepp",
-      "email": "heitor@hotmail.com",
-      "telefone": "53 999999999",
-      "dataNascimento": "2006-07-18",
-      "endereco": "Avenida Mimosa Rodrigues",
-      "cidade": "Pedro Osório",
-      "estado": "RS",
-      "senha": "123456",
-      "DataCriacao": "2025-11-23T00:40:26.864Z"
-    },
-    {
-      "id": "df3b",
-      "nome": "Administrador Voltz",
-      "email": "admin@admin.com",
-      "telefone": "53 999999999",
-      "dataNascimento": "2000-10-20",
-      "endereco": "Escritório Central Voltz",
-      "cidade": "Pelotas",
-      "estado": "RS",
-      "senha": "admin123",
-      "DataCriacao": "2025-11-15T00:40:26.864Z",
-      "isAdmin": true
+        "Cruze",
+        "Sonic",
+        "Spin",
+        "Bora",
+        "Gol",
+        "Airtrek",
+        "Asx",
+        "Lancer"
+      ]
     }
   ]
 }
