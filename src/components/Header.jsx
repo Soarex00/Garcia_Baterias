@@ -17,10 +17,13 @@ export default function Header() {
           <Link
             to="/"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-         
           >
             <div className="flex items-center gap-2 cursor-pointer">
-              <img className="h-20 w-auto" src="./public/logo3.png" alt="Logo" />
+              <img
+                className="h-20 w-auto"
+                src="./public/logo3.png"
+                alt="Logo"
+              />
             </div>
           </Link>
 

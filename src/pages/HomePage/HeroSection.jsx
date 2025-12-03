@@ -1,5 +1,6 @@
 import { Zap } from "lucide-react";
 import { useState, useEffect } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function HeroSection() {
   const images = [
@@ -44,9 +45,26 @@ export default function HeroSection() {
               Sua jornada de energia confiável começa com um clique. Encontre a
               bateria perfeita para seu veículo.
             </p>
-
-            {/* Botões (caso adicione depois) */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-2"></div>
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+              <button
+                onClick={() => {
+                  const msg = "Olá! Quero fazer um pedido.";
+                  window.open(
+                    `https://wa.me/5553999023805?text=${encodeURIComponent(
+                      msg
+                    )}`,
+                    "_blank"
+                  );
+                }}
+                className="bg-[#FDC21C] text-black font-bold py-4 px-10 rounded-2xl 
+               shadow-md hover:brightness-95 transition-all 
+               flex items-center justify-center gap-3
+               text-lg"
+              >
+                <FaWhatsapp className="text-2xl" />
+                PEÇA AGORA
+              </button>
+            </div>
           </div>
 
           {/* Imagem */}
@@ -75,5 +93,3 @@ export default function HeroSection() {
     </section>
   );
 }
-
-
