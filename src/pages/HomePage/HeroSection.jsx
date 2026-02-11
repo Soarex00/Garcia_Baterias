@@ -4,8 +4,8 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export default function HeroSection() {
   const images = [
-    "Bateria Starke.webp",
-    "Bateria Zetta.webp",
+    "bateria starke.webp",
+    "bateria zetta.webp",
     "bateria moura.webp",
   ];
 
@@ -38,7 +38,7 @@ export default function HeroSection() {
 
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
               A bateria do seu carro entregue e instalada em{" "}
-              <span className="text-yellow-400">Pelotas</span>
+              <span className="text-yellow-400">Pelotas e Região</span>
             </h1>
 
             <p className="text-base md:text-lg text-white/90 max-w-md">
@@ -51,9 +51,9 @@ export default function HeroSection() {
                   const msg = "Olá! Quero fazer um pedido.";
                   window.open(
                     `https://wa.me/5553999023805?text=${encodeURIComponent(
-                      msg
+                      msg,
                     )}`,
-                    "_blank"
+                    "_blank",
                   );
                 }}
                 className="bg-[#FDC21C] text-black font-bold py-4 px-10 rounded-2xl 

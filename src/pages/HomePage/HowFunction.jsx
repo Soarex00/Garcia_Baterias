@@ -25,9 +25,12 @@ export default function HowFunction() {
     <section id="howfunction" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#002D72] mb-4">
-            Como Funciona
-          </h2>
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-[#002D72]">
+              Como Funciona
+            </h2>
+            <div className="w-24 h-1 bg-[#FDC21C] mx-auto mt-4 rounded-full"></div>
+          </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Veja como é simples e rápido comprar com a gente
           </p>
@@ -61,4 +64,3 @@ export default function HowFunction() {
     </section>
   );
 }
-

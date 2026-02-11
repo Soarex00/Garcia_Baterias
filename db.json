@@ -5,7 +5,8 @@
       "image": "./bateria moura.webp",
       "model": "M60GD",
       "name": "Bateria Moura 60ah",
-      "price": 45.9,
+      "priceComplet": "R$471,00",
+      "price": 49.5,
       "vehicles": [
         "Focus",
         "Duster",
@@ -29,15 +30,17 @@
         "Megane",
         "Picasso",
         "Montana",
-        "Siena"
+        "Siena",
+        "Corsa"
       ]
     },
     {
       "id": "2",
-      "image": "./Bateria Zetta.webp",
+      "image": "./bateria zetta.webp",
       "model": "Z60D",
       "name": "Bateria Zetta 60ah",
-      "price": 36.0,
+      "priceComplet": "R$361,00",
+      "price": 38.0,
       "vehicles": [
         "Focus",
         "Duster",
@@ -61,15 +64,17 @@
         "Megane",
         "Picasso",
         "Montana",
-        "Siena"
+        "Siena",
+        "Corsa"
       ]
     },
     {
       "id": "3",
-      "image": "Bateria Starke.webp",
+      "image": "./bateria starke.webp",
       "model": "S60FD",
       "name": "Bateria Starke 60ah",
-      "price": 28.0,
+      "priceComplet": "R$343,00",
+      "price": 36.1,
       "vehicles": [
         "Focus",
         "Duster",
@@ -93,15 +98,17 @@
         "Megane",
         "Picasso",
         "Montana",
-        "Siena"
+        "Siena",
+        "Corsa"
       ]
     },
     {
       "id": "4",
-      "image": "Bateria Starke.webp",
+      "image": "./bateria starke.webp",
       "model": "S45FD",
       "name": "Bateria Starke 45ah",
-      "price": 24.0,
+      "priceComplet": "R$275,00",
+      "price": 29.0,
       "vehicles": [
         "Celta",
         "Cruze",
@@ -109,9 +116,9 @@
         "Spin",
         "Bora",
         "Gol",
-        "Airtrek",
+        "Fiesta",
         "Asx",
-        "Lancer"
+        "Ka"
       ]
     },
     {
@@ -119,50 +126,55 @@
       "image": "./bateria moura.webp",
       "model": "M48FD",
       "name": "Bateria Moura 45ah",
-      "price": 39.9,
+      "priceComplet": "R$418,00",
+      "price": 44.0,
       "vehicles": [
+        "Celta",
         "Cruze",
         "Sonic",
         "Spin",
         "Bora",
         "Gol",
-        "Airtrek",
+        "Fiesta",
         "Asx",
-        "Lancer"
+        "Ka"
       ]
     },
     {
       "id": "6",
-      "image": "./Bateria Zetta.webp",
+      "image": "./bateria zetta.webp",
       "model": "Z45D",
       "name": "Bateria Zetta 45ah",
-      "price": 32.9,
+      "priceComplet": "R$333,00",
+      "price": 35.0,
       "vehicles": [
+        "Celta",
         "Cruze",
         "Sonic",
         "Spin",
         "Bora",
         "Gol",
-        "Airtrek",
+        "Fiesta",
         "Asx",
-        "Lancer"
+        "Ka"
       ]
     },
     {
       "id": "7",
-      "image": "./Bateria Zetta.webp",
+      "image": "./bateria zetta.webp",
       "model": "Z70D",
       "name": "Bateria Zetta 70ah",
-      "price": 52.9,
+      "priceComplet": "R$542,00",
+      "price": 57.0,
       "vehicles": [
-        "Cruze",
+        "Ranger",
         "Sonic",
-        "Spin",
         "Bora",
         "Gol",
         "Airtrek",
         "Asx",
-        "Lancer"
+        "Lancer",
+        "Fusion"
       ]
     },
     {
@@ -170,7 +182,8 @@
       "image": "./bateria moura.webp",
       "model": "M70KD",
       "name": "Bateria Moura 70ah",
-      "price": 69.9,
+      "priceComplet": "R$741,00",
+      "price": 78.0,
       "vehicles": [
         "Cruze",
         "Sonic",
@@ -185,10 +198,11 @@
     },
     {
       "id": "9",
-      "image": "Bateria Starke.webp",
+      "image": "./bateria starke.webp",
       "model": "S70FD",
       "name": "Bateria Starke 70ah",
-      "price": 37.0,
+      "priceComplet": "R$449,00",
+      "price": 44.5,
       "vehicles": [
         "Cruze",
         "Sonic",
@@ -197,7 +211,8 @@
         "Gol",
         "Airtrek",
         "Asx",
-        "Lancer"
+        "Lancer",
+        "Fusion"
       ]
     }
   ]

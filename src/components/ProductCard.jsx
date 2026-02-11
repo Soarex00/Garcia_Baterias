@@ -49,7 +49,7 @@ export default function ProductCard({ products: externalProducts = [] }) {
                   {product.name}
                 </h3>
 
-                <p className="text-gray-500 text-sm">10x sem juros de </p>
+                <p className="text-gray-500 text-sm">10x sem juros ou {product.priceComplet} à vista </p>
 
                 <p className="text-2xl font-bold text-[#002D72] mb-2">
                   R${" "}
@@ -79,9 +79,9 @@ export default function ProductCard({ products: externalProducts = [] }) {
                     </p>
                   </div>
                 </div>
-                <p className="text-red-700 mb-2 text-sm">* Valor a base de troca (sucata)
-</p>
-
+                <p className="text-red-700 mb-2 text-sm">
+                  * Valor a base de troca (sucata)
+                </p>
 
                 <div className="mt-auto">
                   <button
@@ -92,7 +92,7 @@ export default function ProductCard({ products: externalProducts = [] }) {
 
                       window.open(
                         `https://wa.me/${numero}?text=${msgEncoded}`,
-                        "_blank"
+                        "_blank",
                       );
                     }}
                     className="w-full flex items-center justify-center gap-2 bg-[#002D72] text-white font-semibold py-2.5 rounded-lg hover:bg-[#003B99] transition-all"

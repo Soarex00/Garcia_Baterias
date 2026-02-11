@@ -6,6 +6,8 @@ import HowFunction from "./HomePage/HowFunction";
 import ProductCard from "../components/ProductCard";
 import About from "./HomePage/About";
 import Contacts from "./HomePage/Contact";
+import Question from "./HomePage/Question";
+import Location from "./HomePage/Location";
 
 function HomePage() {
   return (
@@ -15,7 +17,9 @@ function HomePage() {
       <HowFunction />
       <BatteryFilter />
       <ProductCard />
+      <Question />
       <About />
+      <Location />
       <Contacts />
       <Footer />
     </>
@@ -23,4 +27,3 @@ function HomePage() {
 }
 
 export default HomePage;
-

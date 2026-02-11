@@ -40,7 +40,7 @@ export default function BatteryFilter() {
     const search = normalize(searchTerm);
 
     const results = products.filter((product) =>
-      product.vehicles.some((vehicle) => normalize(vehicle).includes(search))
+      product.vehicles.some((vehicle) => normalize(vehicle).includes(search)),
     );
 
     setFilteredProducts(results);
@@ -50,9 +50,12 @@ export default function BatteryFilter() {
     <>
       <section className="bg-white py-12 px-6 md:px-12 shadow-lg mx-4 md:mx-12 mt-10 border-gray-200">
         <div className="max-w-3xl mx-auto text-center text-gray-800 space-y-6">
-          <h2 className="text-3xl font-bold text-blue-700">
-            Encontre a bateria ideal para o seu veículo ⚡
-          </h2>
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-[#002D72]">
+              Encontre a bateria ideal para o seu veículo ⚡
+            </h2>
+            <div className="w-24 h-1 bg-[#FDC21C] mx-auto mt-4 rounded-full"></div>
+          </div>
           <p className="text-gray-500">
             Digite o modelo do seu carro e veja qual bateria é mais recomendada.
           </p>
